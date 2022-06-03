@@ -1,31 +1,8 @@
-.nav-container {
-    padding: 20px 40px;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(241, 241, 241);
-    color: #000;
-}
-
 .nav-main {
-    display: flex;
     justify-content: space-around;
     flex-grow: 1;
 }
 
-.brand {
-    margin: 16px 0;
+.nav-main a {
     font-weight: bold;
-}
-
-.nav-item {
-    list-style: none;
-}
-
-.nav-item a {
-    text-decoration: none;
-    color: rgb(62, 62, 62);
-}
-.nav-item a:hover {
-    text-decoration: none;
-    color: #000;
 }

@@ -1,0 +1,19 @@
+.cart-widget a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: rgba(255,255,255,.55);
+}
+.cart-widget a span{
+    color: #212529;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    transform: translate3d(-50%, -50%, 0);
+}
+.cart-widget a:hover {
+    color: rgba(255,255,255,.75);
+}
