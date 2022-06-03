@@ -3,10 +3,6 @@
     flex-grow: 1;
 }
 
-.nav-main a {
-    font-weight: bold;
-}
-
 .logo-nav {
     max-height: 32px;
 }
@@ -16,4 +12,33 @@
 }
 .navbar-light .navbar-nav .nav-link.link.active {
     color:rgb(252, 111, 24);
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+    .navbar-collapse {
+        opacity: 0;
+        position: absolute;
+        top: 53px;
+        right: -20%;
+        width: 100%;
+        background-color: #f8f9fa;
+        /* display: none; */
+        padding: 10px;
+            /* Animacion */
+    -webkit-transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -ms-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    }
+    .navbar-collapse.active {
+        position: absolute;
+        display: block;
+        opacity: 1;
+        right: 0;
+    }
+   
 }

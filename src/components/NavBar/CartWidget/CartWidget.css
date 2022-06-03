@@ -2,7 +2,8 @@
     position: relative;
     display: block;
     text-decoration: none;
-    color: rgba(252, 111, 24, 0.75)
+    color: rgba(252, 111, 24, 0.75);
+    text-align: center;
 }
 .cart-widget a span{
     color: #f8f9fa;
