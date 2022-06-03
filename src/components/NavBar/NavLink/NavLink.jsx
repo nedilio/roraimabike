@@ -1,3 +1,4 @@
+import './NavLink.css';
 function NavLink(props) {
   const handleOnClick = (e) => {
     e.preventDefault();
@@ -5,12 +6,10 @@ function NavLink(props) {
     const clickedItem = e.target;
     activeLink.classList.remove('active');
     clickedItem.classList.add('active');
-    // console.log(clickedItem, activeLink);
-
-;  }
+  }
   return (
     <li className="nav-item">
-      <a className={`nav-link ${props.active ? props.active : ''}`} onClick={handleOnClick} href="/#">
+      <a className={`link nav-link ${props.active ? props.active : ''}`} onClick={handleOnClick} href="/#">
         {props.title}
       </a>
     </li>

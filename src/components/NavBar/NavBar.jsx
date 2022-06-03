@@ -4,9 +4,9 @@ import NavLink from "./NavLink/NavLink";
 function NavBar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <span className="navbar-brand mb-0 h1">RoraimaBike</span>
+          <img src="./img/logo-color.png" className="logo-nav" alt="" />
           <button
             className="navbar-toggler"
             type="button"

@@ -1,0 +1,38 @@
+a.nav-link.link {
+    position: relative;
+    color:rgba(252, 111, 24, 0.75);
+}
+
+.nav-link.active::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: rgb(252, 111, 24);
+    ;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+}
+
+.nav-link::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color:rgba(252, 111, 24, 0.75);
+
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 0;
+    /* Animacion */
+    -webkit-transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -ms-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}

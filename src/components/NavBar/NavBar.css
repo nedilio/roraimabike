@@ -6,3 +6,14 @@
 .nav-main a {
     font-weight: bold;
 }
+
+.logo-nav {
+    max-height: 32px;
+}
+
+.navbar-light .navbar-nav .nav-link.link {
+    color:rgba(252, 111, 24, 0.75);
+}
+.navbar-light .navbar-nav .nav-link.link.active {
+    color:rgb(252, 111, 24);
+}

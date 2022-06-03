@@ -2,10 +2,10 @@
     position: relative;
     display: block;
     text-decoration: none;
-    color: rgba(255,255,255,.55);
+    color: rgba(252, 111, 24, 0.75)
 }
 .cart-widget a span{
-    color: #212529;
+    color: #f8f9fa;
     position: absolute;
     text-align: center;
     left: 50%;
@@ -15,5 +15,5 @@
     transform: translate3d(-50%, -50%, 0);
 }
 .cart-widget a:hover {
-    color: rgba(255,255,255,.75);
+    color: rgb(252, 111, 24)
 }
