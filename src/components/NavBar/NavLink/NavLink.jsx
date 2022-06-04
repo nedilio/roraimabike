@@ -8,11 +8,7 @@ function NavLink(props) {
     clickedItem.classList.add('active');
   }
   return (
-    <li className="nav-item">
-      <a className={`link nav-link ${props.active ? props.active : ''}`} onClick={handleOnClick} href="/#">
-        {props.title}
-      </a>
-    </li>
+    <a className={`nav-link mr-5 hover:text-orange-600 ${props.active? props.active : ''}`} href='/#' onClick={handleOnClick}>{props.title}</a>
   );
 }
 

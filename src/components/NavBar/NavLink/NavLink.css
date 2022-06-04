@@ -1,6 +1,5 @@
-a.nav-link.link {
+.nav-link {
     position: relative;
-    color:rgba(252, 111, 24, 0.75);
 }
 
 .nav-link.active::before {
@@ -37,8 +36,11 @@ a.nav-link.link {
 }
 
 @media screen and (max-width: 768px) {
-    .navbar-light .navbar-nav .nav-link.link {
+    .nav-link {
+        width: 100%;
+        padding: 10px 20px;
         text-align: center;
+        margin-right: 0;
     }
     .nav-link::before {
         bottom: 0;

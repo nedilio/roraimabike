@@ -18,3 +18,9 @@
 .cart-widget a:hover {
     color: rgb(252, 111, 24)
 }
+
+@media screen and (max-width: 768px) {
+ /* .cart-widget {
+     margin-top: 0!important;
+ } */
+}
