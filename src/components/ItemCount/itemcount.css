@@ -1,0 +1,37 @@
+.count-control {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.count-control span {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #ff9e62;
+    border-bottom: 2px solid #ff9e62;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+.alerta-error span {
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .btn-control {
+        width: 20%;
+        height: 100px;
+    }
+    .add-to-cart-btn {
+
+        padding: 20px;
+    }
+    
+}
