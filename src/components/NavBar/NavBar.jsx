@@ -1,6 +1,8 @@
 import CartWidget from "./CartWidget/CartWidget";
-import './NavBar.css';
 import NavLink from "./NavLink/NavLink";
+import './navbar.css';
+import LogoRoraima from '../../img/logo-color.png';
+
 function NavBar() {
   const toggleMobileMenu = () => {
     const menu = document.querySelector('.navbar-collapse');
@@ -13,7 +15,10 @@ function NavBar() {
     <div>
       <nav className="navbar navbar-expand-md navbar-light bg-light">
         <div className="container-fluid">
-          <img src="./img/logo-color.png" className="logo-nav" alt="" />
+          <a href="/#">
+
+          <img src={LogoRoraima} className="logo-nav" alt="" />
+          </a>
           <button 
             className="hamburger-toggle"
             onClick={toggleMobileMenu}

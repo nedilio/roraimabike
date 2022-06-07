@@ -1,13 +1,15 @@
+// import ProductCard from '../ProductCard/ProductCard';
 import './itemlistcontainer.css';
+
 function ItemListContainer(props) {
   return (
-    <div className="container-fluid">
-      <section className="row">
-          <div className="col mt-3 mb-3">
-            <h1 className="itemListContainer-title">{props.greeting}</h1>
-          </div>
-      </section>
+<section className="products mt-4 mb-4">
+  <div className="container-fluid">
+    <div className="row">
+      <h1>{props.greeting}</h1>
     </div>
+  </div>
+</section>
   );
 }
 
