@@ -1,4 +1,4 @@
-import './itemproduct.css';
+import './ProductCard.css';
 function ProductCard() {
   return (
     <div className="col-3">

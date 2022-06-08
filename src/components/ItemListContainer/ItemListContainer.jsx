@@ -1,6 +1,6 @@
 // import ProductCard from '../ProductCard/ProductCard';
 import ItemCount from '../ItemCount/ItemCount';
-import './itemlistcontainer.css';
+import './ItemListContainer.css';
 
 function ItemListContainer(props) {
   return (

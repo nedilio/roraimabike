@@ -1,5 +1,5 @@
 import { CartFill } from 'react-bootstrap-icons';
-import './cartwidget.css';
+import './CartWidget.css';
 
 function CartWidget(props) {
   return (

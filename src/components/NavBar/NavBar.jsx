@@ -1,6 +1,6 @@
 import CartWidget from "./CartWidget/CartWidget";
 import NavLink from "./NavLink/NavLink";
-import './navbar.css';
+import './NavBar.css';
 import LogoRoraima from '../../img/logo-color.png';
 
 function NavBar() {

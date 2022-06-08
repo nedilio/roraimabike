@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ExclamationOctagonFill} from 'react-bootstrap-icons';
-import './itemcount.css';
+import './ItemCount.css';
 
 function ItemCount({ initial, stock }) {
   const [count, setCount] = useState(initial);
