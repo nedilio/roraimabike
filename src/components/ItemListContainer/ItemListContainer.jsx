@@ -7,7 +7,7 @@ function ItemListContainer(props) {
 <section className="products mt-4 mb-4">
   <div className="container-fluid">
     <div className="row">
-      <h1>{props.greeting}</h1>
+      <h1 className='itemListContainer-title'>{props.greeting}</h1>
       <ItemCount initial={1} stock={5}/>
     </div>
   </div>
