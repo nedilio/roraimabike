@@ -3,3 +3,6 @@
     border-radius: 0%;
     border: 2px solid #ff9e62;
 }
+.img-product {
+    max-width: 100px;
+}
