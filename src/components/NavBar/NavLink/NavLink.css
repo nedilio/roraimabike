@@ -39,6 +39,8 @@ a.nav-link.link {
 @media screen and (max-width: 768px) {
     .navbar-light .navbar-nav .nav-link.link {
         text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
     }
     .nav-link::before {
         bottom: 0;

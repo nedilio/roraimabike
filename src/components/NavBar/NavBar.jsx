@@ -6,7 +6,7 @@ import LogoRoraima from "../../img/logo-color.png";
 function NavBar() {
   const menuArray = [
     "Home",
-    "Mnatenimiento",
+    "Mantenimiento",
     "Protecciones",
     "Repuestos",
     "Contacto",
@@ -15,9 +15,10 @@ function NavBar() {
   const toggleMobileMenu = () => {
     const menu = document.querySelector(".navbar-collapse");
     const button = document.querySelector(".hamburger-toggle");
+    const body = document.querySelector("body");
     menu.classList.toggle("active");
     button.classList.toggle("active");
-    // console.log('click menu boton');
+    body.classList.toggle("menu-active");
   };
   return (
     <div>
