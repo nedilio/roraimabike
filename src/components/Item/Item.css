@@ -4,5 +4,14 @@
     border: 2px solid #ff9e62;
 }
 .img-product {
-    max-width: 100px;
+    /* max-width: 100px; */
+    transition: all .2s ease-in-out; 
+}
+
+.img-product:hover {
+    transform: scale(1.05); 
+}
+
+.img-container {
+    overflow: hidden;
 }
