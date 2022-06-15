@@ -12,14 +12,18 @@ body {
   background-color: #fc6f18;
   border-radius: 0%;
   border: 2px solid #ff9e62;
+  color: #fff;
+  font-weight: bold;
 }
 .btn-general:focus {
   background-color: #fc6f18;
   border-radius: 0%;
   border: 2px solid #ff9e62;
+  color: #fff;
 }
 .btn-general:hover {
-  background-color: #fc6f18;
+  background-color: #ffff;
   border-radius: 0%;
   border: 2px solid #ff9e62;
+  color: #fc6f18;
 }
