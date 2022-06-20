@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: 1,
+    id: "1a3adbff-e8b5-497c-baca-963b61cfd12f",
     title: "Mantenimiento Básico",
     price: 30000,
     description: "Desarmado de bicicleta, limpieza y engrasado de partes.",
@@ -10,7 +10,7 @@ export const products = [
     rating: { rate: 3.3, count: 203 },
   },
   {
-    id: 2,
+    id: "9432fe3a-07ca-4ab8-bfb2-493b884ec014",
     title: "Mantenimiento Full",
     price: 45000,
     description:
@@ -20,7 +20,7 @@ export const products = [
     rating: { rate: 3.3, count: 203 },
   },
   {
-    id: 3,
+    id: "a0448f71-933b-4190-a4b7-b0a268dc4d45",
     title: "Protecciones - Protekt",
     price: 30000,
     description:
@@ -31,26 +31,26 @@ export const products = [
     rating: { rate: 3.3, count: 203 },
   },
   {
-    id: 9,
+    id: "86d4c13d-39ce-49f8-a124-d12dd151aeac",
     title: "Neumático Continental GrandPrix TT 700×23",
     price: 40000,
     description: "Aerodinámica y baja fricción con el pavimento, es lo que hace estas llantas las ideales para pruebas contra el cronómetro, un perfil refinado y materiales ligeros y resistentes permiten que toda la potencia producida por el ciclista se convierta en velocidad.",
-    category: "Repuestos",
+    category: "repuestos",
     pictureUrl: "https://chelinibikes.com/site/wp-content/uploads/2022/02/contigptt.jpg",
     rating: { rate: 3.3, count: 203 },
   },
   {
-    id: 10,
+    id: "20f77219-e119-48f2-b9e8-78dea70e0007",
     title: "Cinta Supacaz Super Sticky Kush Star Fade – Neon Green",
     price: 20000,
     description:
       "Super Sticky Kush is the bar tape of choice for 3x World Champion Peter Sagan. Fusing performance and style, Supacaz delivers the only bar tape worth dreaming about. We boldly claim that Super Sticky Kush is the best bar tape ever. StarFade will transform any bike into a head turner with a blast of color and flashy graphics",
-    category: "Accesorios",
+    category: "repuestos",
     pictureUrl: "https://secureservercdn.net/72.167.241.46/074.7ac.myftpupload.com/wp-content/uploads/2021/12/star-fade-neon-green.jpg?time=1654833966",
     rating: { rate: 2.9, count: 470 },
   },
   {
-    id: 11,
+    id: "b0f0727b-5052-4ffb-b7f5-20663d656803",
     title:
       "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
     price: 109,
@@ -61,7 +61,7 @@ export const products = [
     rating: { rate: 4.8, count: 319 },
   },
   {
-    id: 12,
+    id: "428f3a67-4314-43b9-b96e-047c88b21e0d",
     title:
       "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
     price: 114,
@@ -72,7 +72,7 @@ export const products = [
     rating: { rate: 4.8, count: 400 },
   },
   {
-    id: 13,
+    id: "8b21f8b9-b56d-459d-9c65-eaed821e611a",
     title: "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
     price: 599,
     description:
@@ -82,7 +82,7 @@ export const products = [
     rating: { rate: 2.9, count: 250 },
   },
   {
-    id: 14,
+    id: "cac61a2f-c6a3-4345-acbc-602b44177a38",
     title:
       "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
     price: 999.99,

@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
 import "./Item.css";
 function Item({item}) {
+
+  const url = `/item/${item.id}`;
   return (
-    <div className="col-sm-3">
-      <div className="card text-center mb-4">
+    <div className="col-sm-4 col-md-3 mb-4">
+      <div className="card text-center mb-4 h-100">
         <div className="img-container">
           <img
             src={item.pictureUrl}
@@ -11,11 +14,11 @@ function Item({item}) {
           />
         </div>
         <div className="card-body">
-          <h4 className="card-title fs-4">{item.title}</h4>
+          <h4 className="card-title fs-6">{item.title}</h4>
           <p className="card-text">$ {item.price}</p>
-          <a href="/#" className="btn btn-primary ver-btn">
-            Ver más
-          </a>
+          <Link className="btn btn-primary btn-general" to={url}>Ver más
+          </Link>
+            
         </div>
       </div>
     </div>
