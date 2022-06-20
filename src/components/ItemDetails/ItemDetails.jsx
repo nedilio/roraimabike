@@ -1,6 +1,8 @@
+import './ItemDetails.css';
+
 function ItemDetails({item}) {
   return (
-    <div className="row item-details">
+    <div className="row item-details p-4 rounded-5 shadow">
         <div className="col-md-4">
             <img src={item.pictureUrl} alt="" className="img-fluid mb-4" />
         </div>

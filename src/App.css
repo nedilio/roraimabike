@@ -2,6 +2,7 @@
 body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
+  background-color: #4a4f55;
 }
 
 .menu-active {
@@ -22,8 +23,8 @@ body {
   color: #fff;
 }
 .btn-general:hover {
-  background-color: #ffff;
+  background-color: #4a4f55;
   border-radius: 0%;
   border: 2px solid #ff9e62;
-  color: #fc6f18;
+  color: #fff;
 }

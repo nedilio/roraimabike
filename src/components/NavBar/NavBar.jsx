@@ -31,8 +31,8 @@ function NavBar() {
   }
   return (
     <div>
-      <nav className="navbar navbar-expand-md navbar-light bg-light">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-md navbar-light bg-light shadow">
+        <div className="container">
           <NavLink to="/">
             <img src={LogoRoraima} className="logo-nav" alt="" />
           </NavLink>

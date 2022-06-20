@@ -15,8 +15,6 @@ function App() {
           <Route path="/" element={<ItemListContainer greeting="Bienvenidos a RoraimaBike" />} />
           <Route path="/category/:categoryId" element={<ItemListContainer greeting="Productos en Categoria: "/>} />
           <Route path="/item/:id" element={<ItemDetailsContainer />} />
-          
-          {/* <ItemDetailsContainer /> */}
         </Routes>
       </BrowserRouter>
     </div>
