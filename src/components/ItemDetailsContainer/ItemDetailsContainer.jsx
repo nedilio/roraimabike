@@ -6,6 +6,7 @@ import {useParams} from 'react-router-dom';
 function ItemDetailsContainer(props) {
   // Hook de estado para producto individual
   const [producto, setProducto] = useState({});
+  const [error, setError] = useState('');
 
 //   Generamos un index random a partir de el numero de items en el array
 
@@ -18,7 +19,7 @@ function ItemDetailsContainer(props) {
         if (productoEncontrado) {
           resolve(productoEncontrado);
         } else {
-          reject("producto no productoEncontrado, revisar id");
+          reject("producto no productoEncontrado, revisar id en url");
         }
       } else {
         reject('no hay productos para buscar');
@@ -31,9 +32,11 @@ function ItemDetailsContainer(props) {
     getItem
     .then((resolve) => {
       setProducto(resolve);
+      setError('');
     })
     .catch((error) => {
       console.log(error);
+      setError(error);
     });
     // eslint-disable-next-line
   }, [id]);
@@ -41,7 +44,9 @@ function ItemDetailsContainer(props) {
   return (
     <section className="mt-4 mb-4 container">
         <h2>Detalle de Producto</h2>
-        {(!producto.title) ? <div className="loader">Loading...</div> : <ItemDetails item={producto}/>}
+        {(!producto.title && !error) ? <div className="loader">Loading...</div> 
+          : error ? <p>{error}</p>: <ItemDetails item={producto}/>
+        }
         
         
     </section>
