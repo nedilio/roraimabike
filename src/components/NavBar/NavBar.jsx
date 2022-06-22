@@ -1,6 +1,6 @@
 import CartWidget from "./CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
-import "./NavBar.css";
+import "./NavBar.scss";
 import LogoRoraima from "../../img/logo-color.png";
 
 function NavBar() {

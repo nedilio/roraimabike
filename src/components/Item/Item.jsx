@@ -5,7 +5,7 @@ function Item({ item }) {
   return (
     <div className="col-sm-4 col-md-3 mb-4">
       <div className="card text-center h-100 shadow">
-        <div className="img-container">
+        <div className="img-container p-3">
           <img
             src={item.pictureUrl}
             className="card-img-top img-fluid img-product"

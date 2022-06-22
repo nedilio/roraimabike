@@ -1,8 +1,9 @@
+@import './styles/variables';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
-  background-color: #4a4f55;
+  background-color: $gray;
 }
 
 .menu-active {
@@ -10,21 +11,21 @@ body {
 }
 
 .btn-general {
-  background-color: #fc6f18;
+  background-color: $orange;
   border-radius: 0%;
-  border: 2px solid #ff9e62;
+  border: 2px solid lighten($orange, 20%);
   color: #fff;
   font-weight: bold;
 }
 .btn-general:focus {
-  background-color: #fc6f18;
+  background-color: $orange;
   border-radius: 0%;
-  border: 2px solid #ff9e62;
+  border: 2px solid lighten($orange, 20%);
   color: #fff;
 }
 .btn-general:hover {
   background-color: #4a4f55;
   border-radius: 0%;
-  border: 2px solid #ff9e62;
+  border: 2px solid lighten($orange, 20%);
   color: #fff;
 }

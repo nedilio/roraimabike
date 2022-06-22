@@ -6,7 +6,7 @@ export const products = [
     description: "Desarmado de bicicleta, limpieza y engrasado de partes.",
     category: "mantenimiento",
     pictureUrl:
-      "https://www.dropbox.com/s/3l8y5sqvxuiumkb/mant-basico.jpg?raw=1",
+      "https://res.cloudinary.com/dlrsxizob/image/upload/c_pad,h_300,w_300/v1655752572/RoraimaBike/mant-basico_sbri1h.png",
     rating: { rate: 3.3, count: 203 },
   },
   {
@@ -16,7 +16,7 @@ export const products = [
     description:
       "Incluye mantenimiento básico y desarme de descarriladores y partes moviles para limpieza y engrasado",
     category: "mantenimiento",
-    pictureUrl: "https://www.dropbox.com/s/msevbbgndnulw3g/mant-full.jpg?raw=1",
+    pictureUrl: "https://res.cloudinary.com/dlrsxizob/image/upload/c_pad,h_300,w_300/v1655752572/RoraimaBike/mant-full_w6o8xf.jpg",
     rating: { rate: 3.3, count: 203 },
   },
   {
@@ -26,8 +26,7 @@ export const products = [
     description:
       "Protecciones para el marco de la bicicleta, con la mejor tecnología",
     category: "protecciones",
-    pictureUrl:
-      "https://www.dropbox.com/s/ckdiq3bhmqtd5zi/protecciones.jpg?raw=1",
+    pictureUrl: "https://res.cloudinary.com/dlrsxizob/image/upload/c_pad,h_300,w_300/v1655752572/RoraimaBike/protecciones_vrmniz.jpg",
     rating: { rate: 3.3, count: 203 },
   },
   {
@@ -36,7 +35,7 @@ export const products = [
     price: 40000,
     description: "Aerodinámica y baja fricción con el pavimento, es lo que hace estas llantas las ideales para pruebas contra el cronómetro, un perfil refinado y materiales ligeros y resistentes permiten que toda la potencia producida por el ciclista se convierta en velocidad.",
     category: "repuestos",
-    pictureUrl: "https://chelinibikes.com/site/wp-content/uploads/2022/02/contigptt.jpg",
+    pictureUrl: "https://res.cloudinary.com/dlrsxizob/image/upload/c_pad,h_300,w_300/v1655752572/RoraimaBike/contigptt_tyu73k.jpg",
     rating: { rate: 3.3, count: 203 },
   },
   {
@@ -46,7 +45,7 @@ export const products = [
     description:
       "Super Sticky Kush is the bar tape of choice for 3x World Champion Peter Sagan. Fusing performance and style, Supacaz delivers the only bar tape worth dreaming about. We boldly claim that Super Sticky Kush is the best bar tape ever. StarFade will transform any bike into a head turner with a blast of color and flashy graphics",
     category: "repuestos",
-    pictureUrl: "https://secureservercdn.net/72.167.241.46/074.7ac.myftpupload.com/wp-content/uploads/2021/12/star-fade-neon-green.jpg?time=1654833966",
+    pictureUrl: "https://res.cloudinary.com/dlrsxizob/image/upload/c_pad,h_300,w_300/v1655753353/RoraimaBike/supacaz_kvnslc.jpg",
     rating: { rate: 2.9, count: 470 },
   },
   {
@@ -57,7 +56,7 @@ export const products = [
     description:
       "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
     category: "electronics",
-    pictureUrl: "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+    pictureUrl: "https://res.cloudinary.com/dlrsxizob/image/upload/c_pad,h_300,w_300/v1655752573/RoraimaBike/71kWymZ_c_L._AC_SX679__gd5yxf.png",
     rating: { rate: 4.8, count: 319 },
   },
   {
@@ -68,7 +67,7 @@ export const products = [
     description:
       "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
     category: "electronics",
-    pictureUrl: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+    pictureUrl: "https://res.cloudinary.com/dlrsxizob/image/upload/c_pad,h_300,w_300/v1655752572/RoraimaBike/61mtL65D4cL._AC_SX679__r8cbrk.jpg",
     rating: { rate: 4.8, count: 400 },
   },
   {
@@ -78,7 +77,7 @@ export const products = [
     description:
       "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
     category: "electronics",
-    pictureUrl: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+    pictureUrl: "https://res.cloudinary.com/dlrsxizob/image/upload/c_pad,h_300,w_300/v1655752572/RoraimaBike/81QpkIctqPL._AC_SX679__b1wnld.jpg",
     rating: { rate: 2.9, count: 250 },
   },
   {
@@ -89,7 +88,7 @@ export const products = [
     description:
       "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
     category: "electronics",
-    pictureUrl: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+    pictureUrl: "https://res.cloudinary.com/dlrsxizob/image/upload/c_pad,h_300,w_300/v1655752572/RoraimaBike/81Zt42ioCgL._AC_SX679__ndqfk7.jpg",
     rating: { rate: 2.2, count: 140 },
   },
 ];

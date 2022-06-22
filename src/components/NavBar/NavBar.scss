@@ -1,3 +1,8 @@
+@import '../../styles/variables';
+
+.nav-bar {
+    background-color: $orange!important;
+}
 .nav-main {
     justify-content: space-around;
     flex-grow: 1;
@@ -8,11 +13,11 @@
 }
 
 .navbar-light .navbar-nav .nav-link.link {
-    color: rgba(252, 111, 24, 0.75);
+    color: lighten($orange, 5%);
 }
 
 .navbar-light .navbar-nav .nav-link.link.active {
-    color: rgb(252, 111, 24);
+    color: $orange;
 }
 
 .hamburger-toggle {
@@ -22,14 +27,14 @@
 /* ESTILOS LINK */
 a.nav-link.link {
     position: relative;
-    color:rgba(252, 111, 24, 0.75);
+    color:lighten($orange, 5%);
 }
 
 .nav-link.active::before {
     content: '';
     display: block;
     height: 3px;
-    background-color: rgb(252, 111, 24);
+    background-color: $orange;
     position: absolute;
     bottom: -7px;
     left: 0;
@@ -102,7 +107,7 @@ a.nav-link.link {
     }
 
     .hamburger-toggle span {
-        background-color: rgb(252, 111, 24);
+        background-color: $orange;
         content: '';
         width: 100%;
         display: block;
