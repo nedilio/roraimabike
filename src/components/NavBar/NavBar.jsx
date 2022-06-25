@@ -1,17 +1,18 @@
 import CartWidget from "./CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
-import "./NavBar.scss";
 import LogoRoraima from "../../img/logo-color.png";
+import { products } from "../../data/products";
+import "./NavBar.scss";
 
 function NavBar() {
-  const menuArray = [
-    { title: "Home", link: "/" },
-    { title: "Mantenimiento", link: "/category/mantenimiento" },
-    { title: "Protecciones", link: "/category/protecciones" },
-    { title: "Repuestos", link: "/category/repuestos" },
-    { title: "Electronicos", link: "/category/electronics" },
-  ];
-
+  // Armamos el Menu desde las categorias de los productos
+  let menuArray = [];
+  products.map((item) => {
+    if (!menuArray.includes(item.category)) {
+      menuArray.push(item.category);
+    }
+    return true;
+  });
 
   const toggleMobileMenu = () => {
     const menu = document.querySelector(".navbar-collapse");
@@ -45,10 +46,13 @@ function NavBar() {
           </button>
           <div className="navbar-collapse" id="navbarSupportedContent">
             <ul className="nav-main navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <NavLink className="nav-link link" to ="/">Home</NavLink>
+              </li>
               {menuArray.map((item, index) => (
-                <li className="nav-item" key={index}>
-                  <NavLink className="nav-link link" to={item.link} onClick={closeMobileMenu}>
-                    {item.title}
+                <li className="nav-item" key={item}>
+                  <NavLink className="nav-link link" to={`/category/${item}`} onClick={closeMobileMenu}>
+                    {item}
                   </NavLink>
                 </li>
               ))}

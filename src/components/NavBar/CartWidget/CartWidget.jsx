@@ -1,12 +1,13 @@
+import { NavLink } from 'react-router-dom';
 import { CartFill } from 'react-bootstrap-icons';
 import './CartWidget.css';
 
 function CartWidget(props) {
   return (
     <div className='cart-widget'>
-        <a href="/#">
+        <NavLink to="/cart">
             <CartFill size={32}/><span>{props.items}</span>
-        </a>
+        </NavLink>
     </div>
   )
 }

@@ -28,6 +28,7 @@
 a.nav-link.link {
     position: relative;
     color:lighten($orange, 5%);
+    text-transform: capitalize;
 }
 
 .nav-link.active::before {

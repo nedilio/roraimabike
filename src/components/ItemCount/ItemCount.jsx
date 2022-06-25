@@ -1,10 +1,15 @@
 import { useState } from 'react';
-import { DashLg, ExclamationOctagonFill, PlusLg } from 'react-bootstrap-icons';
+import { DashLg, ExclamationOctagonFill, PlusLg, Trash } from 'react-bootstrap-icons';
 import './ItemCount.css';
 
-function ItemCount({ initial, stock }) {
+function ItemCount({ initial, stock, onAddToCart }) {
   const [count, setCount] = useState(initial);
   const [error, setError] = useState('');
+
+  // Recibimos la funcion que actualiza el estado y la ejecutamos al hacer click en agregar al carrito
+  function handleAddToCart () {
+    onAddToCart(count);
+  }
 
   const plusCount = () => {
     if (count < stock) {
@@ -31,6 +36,7 @@ function ItemCount({ initial, stock }) {
           onClick={minusCount}
         >
           <DashLg />
+          {/* {count === initial ? <Trash /> :<DashLg />} */}
         </button>
         <span>{count}</span>
         <button
@@ -41,7 +47,10 @@ function ItemCount({ initial, stock }) {
         </button>
       </div>
       <div>
-        <button className="btn-general btn btn-primary add-to-cart-btn">
+        <button 
+          className="btn-general btn btn-primary add-to-cart-btn"
+          onClick={handleAddToCart}
+        >
           Agregar al Carrito
         </button>
       </div>

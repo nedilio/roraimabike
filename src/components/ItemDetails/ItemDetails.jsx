@@ -1,6 +1,16 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetails.css';
 
 function ItemDetails({item}) {
+  const [cart, setCart] = useState(0);
+
+  // Funcion que dice cuantos items de este producto se agregaran al carrito (state)
+  function onAddToCart (cantidad) {
+    setCart(cantidad);
+  }
+
   return (
     <div className="row item-details p-4 rounded-5 shadow">
         <div className="col-md-4">
@@ -11,7 +21,10 @@ function ItemDetails({item}) {
             <p>{item.description}</p>
             <h4 className="fs-6">categoría: {item.category}</h4>
             <h4 className="price">$ {item.price}</h4>
-            <button className="btn btn-general">Agregar al Carrito</button>
+            <p>En el carrito: {cart}</p>
+            {cart === 0 ? 
+            <ItemCount stock={item.stock} initial={item.initial} onAddToCart={onAddToCart}></ItemCount> 
+            : <Link to="/cart">Ir al Carrito</Link> }
         </div>
     </div>
   )
