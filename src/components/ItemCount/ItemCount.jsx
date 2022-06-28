@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DashLg, ExclamationOctagonFill, PlusLg, Trash } from 'react-bootstrap-icons';
+import { DashLg, ExclamationOctagonFill, PlusLg } from 'react-bootstrap-icons';
 import './ItemCount.css';
 
 function ItemCount({ initial, stock, onAddToCart }) {
@@ -36,7 +36,6 @@ function ItemCount({ initial, stock, onAddToCart }) {
           onClick={minusCount}
         >
           <DashLg />
-          {/* {count === initial ? <Trash /> :<DashLg />} */}
         </button>
         <span>{count}</span>
         <button
