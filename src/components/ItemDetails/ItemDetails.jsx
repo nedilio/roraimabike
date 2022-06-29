@@ -1,22 +1,28 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetails.css";
 
-
 function ItemDetails({ item }) {
-  const {addItem} = useContext(CartContext);
-
+  const { addItem } = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
+  const [isAdded, setIsAdded] = useState(false);
+  const { cart } = useContext(CartContext);
 
-  const onAddToCart = (quantity) => { 
-    addItem(item, quantity);
-    setQuantity(quantity);
-   }
+  useEffect(() => {
+    const producto = cart.find((producto) => producto.id === item.id);
+    if (producto) {
+      setQuantity(producto.quantity);
+    }
+  }, []);
 
   // Funcion que dice cuantos items de este producto se agregaran al carrito (state)
-
+  const onAddToCart = (quantity) => {
+    addItem(item, quantity);
+    setQuantity(quantity);
+    setIsAdded(true);
+  };
 
   return (
     <div className="row item-details p-4 rounded-5 shadow">
@@ -28,21 +34,23 @@ function ItemDetails({ item }) {
         <p>{item.description}</p>
         <h4 className="fs-6">categoría: {item.category}</h4>
         <h4 className="price">$ {item.price}</h4>
-        {quantity === 0 ? (
+        <p>Tienes {quantity} de este producto en el carrito</p>
+
+        {isAdded ? (
+          <div>
+            <Link to="/cart">
+              <button className="btn-general btn btn-primary add-to-cart-btn">
+                Ir al Carrito
+              </button>
+            </Link>
+          </div>
+        ) : (
           <ItemCount
             stock={item.stock}
             initial={item.initial}
+            quantity={quantity}
             onAddToCart={onAddToCart}
           ></ItemCount>
-        ) : (
-          <div>
-          <p>Agegaste {quantity} producto{quantity>1&&'s'} al carrito</p>
-          <Link to="/cart">
-            <button className="btn-general btn btn-primary add-to-cart-btn">
-              Ir al Carrito
-            </button>
-          </Link>
-          </div>
         )}
       </div>
     </div>

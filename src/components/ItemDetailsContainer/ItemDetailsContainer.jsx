@@ -44,7 +44,7 @@ function ItemDetailsContainer(props) {
 
   return (
     <section className="mt-4 mb-4 container">
-      <h2 className="text-light">Detalle de Producto</h2>
+      <h2 className="fs-4">Detalle de Producto</h2>
       {!producto.title && !error ? (
         <Loader />
       ) : error ? (

@@ -57,7 +57,7 @@ function NavBar() {
                 </li>
               ))}
             </ul>
-            <CartWidget items={5} />
+            <CartWidget />
           </div>
         </div>
       </nav>

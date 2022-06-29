@@ -10,6 +10,9 @@ function CartContextProvider(props) {
   let cartCount = cart
     .map((item) => item.quantity)
     .reduce((sum, value) => sum + value, 0);
+  let cartTotal = cart
+    .map((item) => item.quantity*item.price)
+    .reduce((sum, value) => sum + value, 0);
 
   // Funcion que agrega item al carrito o actualiza la cantidad si ya se encuentra en el carrito
   const addItem = (item, quantity) => {
@@ -45,7 +48,7 @@ function CartContextProvider(props) {
 
   return (
     <CartContext.Provider
-      value={{ cart, cartCount, addItem, clear, removeItem }}
+      value={{ cart, cartCount, cartTotal, addItem, clear, removeItem }}
     >
       {props.children}
     </CartContext.Provider>
