@@ -43,12 +43,12 @@ function ItemDetailsContainer(props) {
   }, [id]);
 
   return (
-    <section className="mt-4 mb-4 container">
-      <h2 className="fs-4">Detalle de Producto</h2>
+    <section className="container mx-auto px-2">
+      <h2 className="text-center my-4">Detalle de Producto</h2>
       {!producto.title && !error ? (
         <Loader />
       ) : error ? (
-        <p className="alerta-error alert alert-danger">{error}</p>
+        <p className="">{error}</p>
       ) : (
         <ItemDetails item={producto} />
       )}

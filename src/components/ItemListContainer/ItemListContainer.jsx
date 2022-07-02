@@ -57,27 +57,23 @@ function ItemListContainer(props) {
   }, [categoryId]);
 
   return (
-    <section className="mt-4 mb-4">
-      <div className="container">
-        <div className="row">
-          <h1 className="itemListContainer-title">
-            {props.greeting}
-            {categoryId && categoryId}
-          </h1>
-          {
-            // Al iniciar componente (no tenemos productos y no hay error) mostramos un loader.
-            // Al terminar la función asincrona (tenemos productos o error) mostramos el componente ItemList o el error
+    <section className="contacontainer mx-auto px-2 my-8">
+      <h1 className="text-center text-2xl my-4">
+        {props.greeting}
+        {categoryId && categoryId}
+      </h1>
+      {
+        // Al iniciar componente (no tenemos productos y no hay error) mostramos un loader.
+        // Al terminar la función asincrona (tenemos productos o error) mostramos el componente ItemList o el error
 
-            productos.length === 0 && !error ? (
-              <Loader />
-            ) : error ? (
-              <p className="alerta-error alert alert-danger">{error}</p>
-            ) : (
-              <ItemList items={productos} />
-            )
-          }
-        </div>
-      </div>
+        productos.length === 0 && !error ? (
+          <Loader />
+        ) : error ? (
+          <p className="alerta-error alert alert-danger">{error}</p>
+        ) : (
+          <ItemList items={productos} />
+        )
+      }
     </section>
   );
 }
