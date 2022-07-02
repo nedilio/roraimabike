@@ -2,55 +2,76 @@ import { useContext } from "react";
 import { Trash } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import './Cart.scss';
+import Button from "../Button/Button";
 
 const Cart = () => {
   const { cart, cartTotal, removeItem, clear } = useContext(CartContext);
   return (
-    <section className="container mt-4 mb-4">
+    <section className="container my-4 mx-auto">
       {cart.length === 0 ? (
         <div>
-          <p>No hay Productos en el Carrito</p>
-          <Link className="btn-general btn btn-primary" to="/">Encuentra productos para agregar al carrito</Link>
+          <p className="text-slate-500">No hay Productos en el Carrito</p>
+          <Link className="underline text-orange-500 text-center" to="/">
+            Encuentra productos para agregar al carrito
+          </Link>
         </div>
       ) : (
-        <div className="row mt-4 mb-4">
-          <div className="col-6">
+        <div className="shadow p-6">
+          <ul
+            role="list"
+            className="divide-y divide-slate-200 dark:divide-slate-700"
+          >
             {cart.map((producto) => {
+              console.log(producto);
               return (
-                <div className="row bg-body rounded shadow-sm pt-4 pb-4 mb-4" key={producto.id}>
-                  <div className="col-2">
-                    <Link to={`/item/${producto.id}`}>
-                      <img
-                        className="img-fluid"
-                        src={producto.pictureUrl}
-                        alt=""
-                      />
-                    </Link>
-                  </div>
-                  <div className="col-8">
-                    <h3 className="fs-4">{producto.title}</h3>
-                    <p>Total productos: {producto.quantity}</p>
-                    <p>Precio Unidad: {producto.price}</p>
-                  </div>
-                  <div className="col-2">
-                    <button
-                      className="btn-general btn btn-primary"
+                <li className="py-3 sm:py-4" key={producto.id}>
+                  <div className="flex items-center flex-col sm:flex-row space-x-4">
+                    <div className="flex-shrink-0">
+                      <Link to={`/item/${producto.id}`}>
+                        <img
+                          className="w-32 h-32 rounded"
+                          src={producto.pictureUrl}
+                          alt={producto.title}
+                        />
+                      </Link>
+                    </div>
+                    <div className="flex-1 min-w-0 text-center sm:text-left">
+                      <p className="text-xl font-medium text-slate-900">
+                        {producto.title}
+                      </p>
+                      <p className="text-sm text-slate-500 ">
+                        Precio unidad: $ {producto.price}
+                      </p>
+                      <p className="text-sm text-slate-500 ">
+                        Cantidad: {producto.quantity}
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-base text-slate-900">
+                      ${producto.price * producto.quantity}
+                    </div>
+                    <div className="inline-flex items-center text-base text-slate-900">
+                      <Button
                       onClick={() => removeItem(producto.id)}
-                    >
+                      >
                       <Trash />
-                    </button>
+
+                      </Button>
+                
+                    </div>
                   </div>
-                </div>
+                </li>
               );
             })}
-          </div>
-          <div className="col-6 resumen text-center">
-            <p>Total: $ {cartTotal}</p>
-            <button className="btn-general btn btn-primary" onClick={clear}>
+          </ul>
+
+          <div className="text-center">
+            <p className="mb-4">Total: $ {cartTotal}</p>
+            <Button className="block" onClick={clear}>
               Vaciar Carrito
-            </button>
-            <button className="btn-general btn btn-primary">Finalizar Compra</button>
+            </Button>
+            <Button>
+              Finalizar Compra
+            </Button>
           </div>
         </div>
       )}

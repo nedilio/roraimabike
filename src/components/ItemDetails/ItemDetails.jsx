@@ -48,16 +48,16 @@ function ItemDetails({ item }) {
               </div>
             </div>
             <div className="text-md sm:text-sm leading-6 text-slate-500">
-              <p>
+              <p className="my-4">
                 Categoría: {item.category}
               </p>
               <p>{item.description}</p>
-              <p className="text-slate-800">Tienes {quantity} de este producto en el carrito</p>
+              <p className="text-slate-800 mt-4">Tienes {quantity} de este producto en el carrito</p>
             </div>
 
             <div className="w-44 sm:w-1/2 lg:w-1/3 mb-4 mx-auto md:mx-0 text-sm text-center font-medium">
               {isAdded ? (
-                <div>
+                <div className="mt-4">
                   <Link to="/cart">
                     <Button>Ir Al Carrito</Button>
                   </Link>
@@ -80,37 +80,6 @@ function ItemDetails({ item }) {
           </div>
         </div>
       </div>
-
-      {/* <h1>bootstrap</h1>
-    <div className="row item-details p-4 rounded-5 shadow">
-      <div className="col-md-4">
-        <img src={item.pictureUrl} alt="" className="img-fluid mb-4" />
-      </div>
-      <div className="col-md-8">
-        <h3>{item.title}</h3>
-        <p>{item.description}</p>
-        <h4 className="fs-6">categoría: {item.category}</h4>
-        <h4 className="price">$ {item.price}</h4>
-        <p>Tienes {quantity} de este producto en el carrito</p>
-
-        {isAdded ? (
-          <div>
-            <Link to="/cart">
-              <button className="px-6 h-12 uppercase font-semibold tracking-wider border-2 border-black bg-orange-400 text-black">
-                Ir al Carrito
-              </button>
-            </Link>
-          </div>
-        ) : (
-          <ItemCount
-            stock={item.stock}
-            initial={item.initial}
-            quantity={quantity}
-            onAddToCart={onAddToCart}
-          ></ItemCount>
-        )}
-      </div>
-    </div> */}
     </>
   );
 }

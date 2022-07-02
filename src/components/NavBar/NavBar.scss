@@ -1,22 +1,15 @@
 @import '../../styles/variables';
 
-.nav-bar {
-    background-color: $orange!important;
-}
-.nav-main {
-    justify-content: space-around;
-    flex-grow: 1;
-}
 
 .logo-nav {
     max-height: 32px;
 }
 
-.navbar-light .navbar-nav .nav-link.link {
+ .nav-link.link {
     color: lighten($orange, 5%);
 }
 
-.navbar-light .navbar-nav .nav-link.link.active {
+ .nav-link.active {
     color: $orange;
 }
 
@@ -79,11 +72,11 @@ a.nav-link.link {
         /* display: none; */
         padding: 10px;
         /* Animacion */
-        -webkit-transition: all 250ms ease-in-out;
-        -moz-transition: all 250ms ease-in-out;
-        -ms-transition: all 250ms ease-in-out;
-        -o-transition: all 250ms ease-in-out;
-        transition: all 250ms ease-in-out;
+        -webkit-transition: all 350ms ease-in-out;
+        -moz-transition: all 350ms ease-in-out;
+        -ms-transition: all 350ms ease-in-out;
+        -o-transition: all 350ms ease-in-out;
+        transition: all 350ms ease-in-out;
     }
 
     .navbar-collapse.active {

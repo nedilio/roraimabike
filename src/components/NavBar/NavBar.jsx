@@ -32,32 +32,35 @@ function NavBar() {
   }
   return (
     <div>
-      <nav className="navbar navbar-expand-md navbar-light bg-light shadow">
-        <div className="container">
+      <nav className="shadow">
+        <div className="container mx-auto flex py-4 px-4 justify-between">
           <NavLink to="/">
-            <img src={LogoRoraima} className="logo-nav" alt="" />
+            <img src={LogoRoraima} className="max-h-8" alt="" />
           </NavLink>
 
-          <button className="hamburger-toggle" onClick={toggleMobileMenu}>
+          <button className="hamburger-toggle float-right" onClick={toggleMobileMenu}>
             <span className="line-1"></span>
             <span className="line-2"></span>
             <span className="line-3"></span>
             {/* <span className="navbar-toggler-icon"></span> */}
           </button>
-          <div className="navbar-collapse" id="navbarSupportedContent">
-            <ul className="nav-main navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink className="nav-link link" to ="/">Home</NavLink>
+          <div className="navbar-collapse flex-1">
+            <ul className="sm:mb-3 sm:flex sm:justify-between sm:pl-4">
+              <li className="p-2 relative">
+                <NavLink className="capitalize text-orange-400 nav-link" to ="/" onClick={closeMobileMenu}>Home</NavLink>
               </li>
               {menuArray.map((item, index) => (
-                <li className="nav-item" key={item}>
-                  <NavLink className="nav-link link" to={`/category/${item}`} onClick={closeMobileMenu}>
+                <li className="p-2 relative" key={item}>
+                  <NavLink className="nav-link capitalize text-orange-400" to={`/category/${item}`} onClick={closeMobileMenu}>
                     {item}
                   </NavLink>
                 </li>
               ))}
+              <li>
+
+                <CartWidget />
+              </li>
             </ul>
-            <CartWidget />
           </div>
         </div>
       </nav>
