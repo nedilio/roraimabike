@@ -7,7 +7,7 @@ Es un e-commerce desarrolado en react para un taller de bicicletas para el curso
 ## RECURSOS UTILIZADOS
 1. Se inició el proyecto utilizando [Create React App](https://github.com/facebook/create-react-app).
 
-2. Para los estilos se usa el framework css [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/).
+2. Para los estilos se usa el framework css [Tailwind](https://tailwindcss.com/docs/utility-first).
 
 3. Los iconos son de la librería [react-bootstrap-icons](https://github.com/ismamz/react-bootstrap-icons#readme).
 

@@ -3,29 +3,10 @@
 body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
-  background-color: $gray;
+  // background-color: $gray;
+  @apply bg-slate-100;
 }
 
 .menu-active {
   overflow: hidden;
-}
-
-.btn-general {
-  background-color: $orange;
-  border-radius: 0%;
-  border: 2px solid lighten($orange, 20%);
-  color: #fff;
-  font-weight: bold;
-}
-.btn-general:focus {
-  background-color: $orange;
-  border-radius: 0%;
-  border: 2px solid lighten($orange, 20%);
-  color: #fff;
-}
-.btn-general:hover {
-  background-color: #4a4f55;
-  border-radius: 0%;
-  border: 2px solid lighten($orange, 20%);
-  color: #fff;
 }

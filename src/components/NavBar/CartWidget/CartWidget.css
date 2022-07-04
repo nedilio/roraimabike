@@ -2,7 +2,9 @@
     position: relative;
     display: block;
     text-decoration: none;
-    color: rgba(252, 111, 24, 0.75);
+    /* color: rgba(252, 111, 24, 0.75); */
+    @apply text-orange-400 transition delay-150;
+
     text-align: center;
 }
 .cart-widget a span{
@@ -17,5 +19,6 @@
     margin-left: 2px;
 }
 .cart-widget a:hover {
-    color: rgb(252, 111, 24)
+    /* color: rgb(252, 111, 24) */
+    @apply text-orange-500;
 }

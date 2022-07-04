@@ -12,7 +12,7 @@ function App() {
   //   res=> console.log(res)
   // )
   return (
-    <div className="font-mono bg-slate-50">
+    <div className="font-mono bg-slate-100">
       <CartContextProvider>
         <BrowserRouter>
           <header>

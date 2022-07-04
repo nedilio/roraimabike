@@ -2,19 +2,20 @@ import { NavLink } from "react-router-dom";
 import { CartFill } from "react-bootstrap-icons";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
-import "./CartWidget.css";
+// import "./CartWidget.css";
 
 function CartWidget() {
   const { cartCount } = useContext(CartContext);
 
   if (cartCount > 0) {
     return (
-      <div className="cart-widget">
-        <NavLink to="/cart">
-          <CartFill size={32} />
-          <span>{cartCount}</span>
-        </NavLink>
-      </div>
+      <NavLink
+        to="/cart"
+        className="flex items-center justify-center w-28 text-white text-center bg-orange-500 border border-slate-500 px-4 rounded transition delay-150 hover:bg-orange-300"
+      >
+        <CartFill size={18} />
+        <span className="text-lg ml-4">{cartCount}</span>
+      </NavLink>
     );
   }
 }
