@@ -11,7 +11,7 @@ function CartContextProvider(props) {
     .map((item) => item.quantity)
     .reduce((sum, value) => sum + value, 0);
   let cartTotal = cart
-    .map((item) => item.quantity*item.price)
+    .map((item) => item.quantity * item.price)
     .reduce((sum, value) => sum + value, 0);
 
   // Funcion que agrega item al carrito o actualiza la cantidad si ya se encuentra en el carrito

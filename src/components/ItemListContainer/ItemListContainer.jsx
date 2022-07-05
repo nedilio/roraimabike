@@ -1,8 +1,7 @@
+import { getProductos, getProductosByCat } from "../../services/firestore";
 import { useEffect, useState } from "react";
-import ItemList from "../ItemList/ItemList";
-import { products } from "../../data/products";
 import { useParams } from "react-router-dom";
-import "./ItemListContainer.css";
+import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
 
 function ItemListContainer(props) {
@@ -13,47 +12,30 @@ function ItemListContainer(props) {
   // Hook para obtener parametros de url
   const categoryId = useParams().categoryId;
 
-  // Promesa que resuelve productos
-  const traerProductos = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (products) {
-        // Si estamos en una categoria filtramos
-        if (categoryId) {
-          let catProducts = products.filter(
-            (item) => item.category === categoryId
-          );
-          //Revisamos si tenemos productos Filtrados y los resolvemos
-          if (catProducts.length > 0) {
-            resolve(catProducts);
-          }
-          //Si no tenemos productos puede ser que la categoria en la url esta mala o no hay productos
-          else {
-            reject("no hay productos en esta categoria o no existe categoria");
-          }
-        }
-        // Si estamos en el home devolvemos todos los productos
-        else {
-          resolve(products);
-        }
-      } else {
-        reject("hubo un error en la consulta de productos");
-      }
-    }, 2000);
-  });
   // Ejecutar al "montar" el componente
   useEffect(() => {
     setProductos([]);
-    // Promesa que resuelve los datos
-    traerProductos
-      .then((resolve) => {
-        setProductos(resolve);
-        setError("");
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(error);
-      });
-    // eslint-disable-next-line
+    if (!categoryId) {
+      getProductos()
+        .then((res) => {
+          setProductos(res);
+          setError("");
+        })
+        .catch((error) => {
+          console.log(error);
+          setError(error);
+        });
+    } else {
+      getProductosByCat(categoryId)
+        .then((res) => {
+          setProductos(res);
+          setError("");
+        })
+        .catch((error) => {
+          console.log(error);
+          setError(error);
+        });
+    }
   }, [categoryId]);
 
   return (

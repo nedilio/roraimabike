@@ -68,7 +68,7 @@ function NavBar() {
                 </li>
               ))}
               <li className="p-2 relative flex justify-center">
-                <CartWidget />
+                <CartWidget onClick={closeMobileMenu} />
               </li>
             </ul>
           </div>

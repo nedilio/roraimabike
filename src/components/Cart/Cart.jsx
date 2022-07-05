@@ -1,11 +1,28 @@
-import { useContext } from "react";
-import { Trash } from "react-bootstrap-icons";
-import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import { createOrder } from "../../services/firestore";
+import { Link } from "react-router-dom";
+import { Trash } from "react-bootstrap-icons";
+import { useContext } from "react";
 import Button from "../Button/Button";
 
 const Cart = () => {
   const { cart, cartTotal, removeItem, clear } = useContext(CartContext);
+
+  const order = {
+    buyer: {
+      name: "Nelson Izquierdo",
+      phone: "930889242",
+      email: "mail@coder.com",
+    },
+    items: cart,
+    total: cartTotal,
+  };
+
+  const handleBuyOrder = (order) => {
+    createOrder(order);
+    clear();
+  };
+
   return (
     <section className="container my-4 mx-auto px-4">
       {cart.length === 0 ? (
@@ -17,9 +34,7 @@ const Cart = () => {
         </div>
       ) : (
         <div className="shadow p-6">
-          <ul
-            className="divide-y divide-slate-700 "
-          >
+          <ul className="divide-y divide-slate-700 ">
             {cart.map((producto) => {
               return (
                 <li className="py-3 sm:py-4" key={producto.id}>
@@ -34,16 +49,18 @@ const Cart = () => {
                       </Link>
                     </div>
                     <div className="flex-1 min-w-0 text-center sm:text-left">
-                      <p className="sm:text-xl font-medium text-slate-900">
-                        {producto.title}
-                      </p>
+                      <Link to={`/item/${producto.id}`}>
+                        <p className="sm:text-xl font-medium text-slate-900">
+                          {producto.title}
+                        </p>
+                      </Link>
                       <p className="text-sm text-slate-500 ">
                         Precio: $ {producto.price}
                       </p>
                       <p className="text-sm text-slate-500 ">
                         Cantidad: {producto.quantity}
                       </p>
-                      <p className="text-sm text-slate-500 ">
+                      <p className="text-md text-slate-500 font-bold">
                         Subtotal: ${producto.price * producto.quantity}
                       </p>
                     </div>
@@ -67,7 +84,12 @@ const Cart = () => {
               <p>Total: $ {cartTotal}</p>
             </div>
             <div className="text-center">
-              <Button className="mx-4 mb-4">Finalizar Compra</Button>
+              <Button
+                className="mx-4 mb-4"
+                onClick={() => handleBuyOrder(order)}
+              >
+                Finalizar Compra
+              </Button>
               <Button
                 onClick={clear}
                 color="bg-red-500 hover:bg-red-300 text-white"
