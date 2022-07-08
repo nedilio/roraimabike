@@ -48,11 +48,11 @@ function ItemDetails({ item }) {
               </div>
             </div>
             <div className="text-md sm:text-sm leading-6 text-slate-500">
-              <p className="my-4">
-                Categoría: {item.category}
-              </p>
+              <p className="my-4">Categoría: {item.category}</p>
               <p>{item.description}</p>
-              <p className="text-slate-800 mt-4">Tienes {quantity} de este producto en el carrito</p>
+              <p className="text-slate-800 mt-4">
+                Tienes {quantity} de este producto en el carrito
+              </p>
             </div>
 
             <div className="w-44 sm:w-1/2 lg:w-1/3 mb-4 mx-auto md:mx-0 text-sm text-center font-medium">
@@ -63,19 +63,15 @@ function ItemDetails({ item }) {
                   </Link>
                 </div>
               ) : (
-                <ItemCount
-                  stock={item.stock}
-                  initial={item.initial}
-                  quantity={quantity}
-                  onAddToCart={onAddToCart}
-                ></ItemCount>
+                item.stock !== 0 && (
+                  <ItemCount
+                    stock={item.stock}
+                    initial={item.initial}
+                    quantity={quantity}
+                    onAddToCart={onAddToCart}
+                  ></ItemCount>
+                )
               )}
-
-              {/* <button className="flex-none flex items-center justify-center w-12 h-12 text-black" type="button" aria-label="Like">
-        <svg width="20" height="20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
-        </svg>
-      </button> */}
             </div>
           </div>
         </div>

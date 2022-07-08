@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {
   addDoc,
@@ -9,18 +8,15 @@ import {
   getFirestore,
   query,
   Timestamp,
+  updateDoc,
   where,
 } from "firebase/firestore";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 
 const firebaseConfig = {
   apiKey: "AIzaSyA3h2QzBMq-s1gxhePjJsiXmCLPAh3QRKs",
   authDomain: "roraimabike-a6ef3.firebaseapp.com",
   projectId: "roraimabike-a6ef3",
+  // projectId: process.env.PROJECT_ID,
   storageBucket: "roraimabike-a6ef3.appspot.com",
   messagingSenderId: "51852262733",
   appId: "1:51852262733:web:db13aaf7c9e10b77768b04",
@@ -28,15 +24,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const appFirebase = initializeApp(firebaseConfig);
-const appFirestore = getFirestore(appFirebase);
+const db = getFirestore(appFirebase);
 
 export const testDB = () => {
-  console.log(appFirestore);
+  console.log(db);
 };
 
 // Funcion para traer todos los productos desde firestore
 export const getProductos = async () => {
-  const productsCollection = collection(appFirestore, "products");
+  const productsCollection = collection(db, "products");
   const productsSnapshot = await getDocs(productsCollection);
   let products = productsSnapshot.docs.map((product) => {
     return { ...product.data(), id: product.id };
@@ -46,7 +42,7 @@ export const getProductos = async () => {
 
 // Funcion para traer productos de una categoria desde firestore
 export const getProductosByCat = async (categoryId) => {
-  const productsCollection = collection(appFirestore, "products");
+  const productsCollection = collection(db, "products");
   const catQuery = query(
     productsCollection,
     where("category", "==", categoryId && categoryId)
@@ -59,14 +55,12 @@ export const getProductosByCat = async (categoryId) => {
   return products;
 };
 
-// Funcion que trae un producto por id
 export const getSingleItem = async (id) => {
-  const productRef = doc(appFirestore, "products", id);
+  const productRef = doc(db, "products", id);
   const product = await getDoc(productRef);
   return { ...product.data(), id: product.id };
 };
 
-// Funcion para importar datos desde un array de productos
 export const exportDataToFirestore = async () => {
   const productos = [
     {
@@ -177,26 +171,36 @@ export const exportDataToFirestore = async () => {
       initial: 1,
     },
   ];
-  console.log(productos);
 
-  const productsCollection = collection(appFirestore, "products");
+  const productsCollection = collection(db, "products");
   // eslint-disable-next-line
   productos.map((item) => {
     const { id, ...rest } = item;
-    console.log(rest);
-    addDoc(productsCollection, rest).then((res) => {
-      console.log("Documento guardado: ");
-    });
+    addDoc(productsCollection, rest).then((res) => {});
   });
 };
 
 export const createOrder = async (order) => {
-  console.log(order);
-  const orderCollectionRef = collection(appFirestore, "orders");
-
-  addDoc(orderCollectionRef, { ...order, date: Timestamp.now() }).then((res) =>
-    console.log("ok")
-  );
+  const orderCollectionRef = collection(db, "orders");
+  const newOrder = await addDoc(orderCollectionRef, {
+    ...order,
+    date: Timestamp.now(),
+  });
+  return newOrder.id;
 };
 
-export default appFirestore;
+export const updateStock = (cart) => {
+  cart.map(async (product) => {
+    const { id, stock, quantity } = product;
+    const prodRef = doc(db, "products", id);
+    await updateDoc(prodRef, { stock: stock - quantity });
+  });
+};
+
+export const getOrder = async (id) => {
+  const orderRef = doc(db, "orders", id);
+  const order = await getDoc(orderRef);
+  return { ...order.data(), id: order.id };
+};
+
+export default db;
