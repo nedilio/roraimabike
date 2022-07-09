@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { CartFill } from "react-bootstrap-icons";
 import { useContext } from "react";
-import { CartContext } from "../../../context/CartContext";
-// import "./CartWidget.css";
+import { CartContext } from "../../context/CartContext";
 
 function CartWidget({ onClick }) {
   const { cartCount } = useContext(CartContext);

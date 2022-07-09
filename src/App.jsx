@@ -9,7 +9,7 @@ import "./App.scss";
 
 function App() {
   return (
-    <div className="font-mono bg-slate-100">
+    <div className="font-sans bg-slate-100">
       <CartContextProvider>
         <BrowserRouter>
           <header>

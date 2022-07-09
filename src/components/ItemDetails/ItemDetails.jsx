@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import Button from "../Button/Button";
 import ItemCount from "../ItemCount/ItemCount";
-// import "./ItemDetails.css";
 
 function ItemDetails({ item }) {
   const { addItem } = useContext(CartContext);
@@ -19,12 +18,12 @@ function ItemDetails({ item }) {
     // eslint-disable-next-line
   }, []);
 
-  // Funcion que dice cuantos items de este producto se agregaran al carrito (state)
   const onAddToCart = (quantity) => {
     addItem(item, quantity);
     setQuantity(quantity);
     setIsAdded(true);
   };
+
   return (
     <>
       <div className="w-11/12 md:w-4/5 mx-auto shadow-md rounded mb-4">

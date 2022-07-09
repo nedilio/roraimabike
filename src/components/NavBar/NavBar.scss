@@ -1,19 +1,13 @@
-@import '../../styles/variables';
-
-
 .logo-nav {
     max-height: 32px;
 }
 
  .nav-link.link {
-    // color: lighten($orange, 5%);
     @apply text-orange-300;
 }
 
 .nav-link.active {
      @apply text-orange-500;
-    // color: $orange;
-
 }
 
 .hamburger-toggle {
@@ -23,7 +17,6 @@
 /* ESTILOS LINK */
 a.nav-link.link {
     position: relative;
-    // color:lighten($orange, 5%);
     @apply text-orange-300;
     text-transform: capitalize;
 }
@@ -74,9 +67,7 @@ a.nav-link.link {
         left: -100%;
         width: 0;
         background-color: #f8f9fa;
-        /* display: none; */
         padding: 10px;
-        /* Animacion */
         -webkit-transition: all 350ms ease-in-out;
         -moz-transition: all 350ms ease-in-out;
         -ms-transition: all 350ms ease-in-out;
@@ -106,7 +97,6 @@ a.nav-link.link {
     }
 
     .hamburger-toggle span {
-        // background-color: $orange;
         @apply bg-orange-500;
         content: '';
         width: 100%;

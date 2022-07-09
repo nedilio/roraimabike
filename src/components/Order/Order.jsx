@@ -7,7 +7,6 @@ const Order = () => {
   const [order, setOrder] = useState(undefined);
   const orderId = useParams().id;
 
-  //   const fecha =
   useEffect(() => {
     getOrder(orderId).then((res) => {
       setOrder(res);
@@ -19,24 +18,44 @@ const Order = () => {
       {!order ? (
         <Loader />
       ) : (
-        <div>
-          <h3>
-            Hola {order.buyer.name} tu orden es la: {order.id}
-          </h3>
-          <ul className="mt-4">
-            {order.items.map((producto) => (
-              <li
-                key={producto.id}
-                className="mb-3 border-b-slate-400 border-b-2"
-              >
-                <p>
-                  {producto.title} <span>Cantidad: {producto.quantity}</span>
-                </p>
-              </li>
-            ))}
-          </ul>
-          <p>total: {order.total}</p>
-          <p>
+        <div className="shadow p-6 rounded-md">
+          <div>
+            <h2 className="text-orange-500 font-bold text-3xl">
+              Orden {order.id}
+            </h2>
+          </div>
+
+          <div className="my-4">
+            <h3>Datos de Usuario</h3>
+            <p>Nombre: {order.buyer.name}</p>
+            <p>Telefono: {order.buyer.phone}</p>
+          </div>
+          <table className="table-auto">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              {order.items.map((producto) => (
+                <tr
+                  key={producto.id}
+                  className="mb-3 border-b-slate-400 border-b-2"
+                >
+                  <td>{producto.title}</td>
+                  <td className="text-center">{producto.quantity}</td>
+                  <td className="text-center">
+                    {producto.price * producto.quantity}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <p>Total: {order.total}</p>
+          <p className="mb-4">
             Creada:
             {new Intl.DateTimeFormat("es-CL", {
               dateStyle: "full",

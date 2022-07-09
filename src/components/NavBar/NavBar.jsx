@@ -1,11 +1,10 @@
-import CartWidget from "./CartWidget/CartWidget";
+import CartWidget from "./CartWidget";
 import { NavLink } from "react-router-dom";
 import LogoRoraima from "../../img/logo-color.png";
 import { products } from "../../data/products";
 import "./NavBar.scss";
 
 function NavBar() {
-  // Armamos el Menu desde las categorias de los productos
   let menuArray = [];
   products.map((item) => {
     if (!menuArray.includes(item.category)) {

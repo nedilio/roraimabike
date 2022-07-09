@@ -5,7 +5,6 @@ function ItemCount({ initial, stock, quantity, onAddToCart }) {
   const [count, setCount] = useState(initial);
   const [error, setError] = useState("");
 
-  // Recibimos la funcion que actualiza el estado y la ejecutamos al hacer click en agregar al carrito
   function handleAddToCart() {
     onAddToCart(count);
   }

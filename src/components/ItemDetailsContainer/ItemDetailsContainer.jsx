@@ -5,15 +5,12 @@ import ItemDetails from "../ItemDetails/ItemDetails";
 import Loader from "../Loader/Loader";
 
 function ItemDetailsContainer(props) {
-  // Hook de estado para producto individual
   const [producto, setProducto] = useState({});
   const [error, setError] = useState("");
 
-  //   Generamos un index random a partir de el numero de items en el array
   const id = useParams().id;
-  // Ejecutar al "montar" el componente
+
   useEffect(() => {
-    // Promesa que resuelve los datos
     getSingleItem(id)
       .then((resolve) => {
         setProducto(resolve);
@@ -23,7 +20,6 @@ function ItemDetailsContainer(props) {
         console.log(error);
         setError(error);
       });
-    // eslint-disable-next-line
   }, [id]);
 
   return (

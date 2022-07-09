@@ -1,21 +1,3 @@
 .loader {
-    width:100%;
-    height: 50vh;
-    /* background-color: red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image_rotate {
-    animation: rotation 2s infinite linear;
-}
-
-@keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(359deg);
-    }
+  height: 50vh;
 }
