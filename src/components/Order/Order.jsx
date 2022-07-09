@@ -20,7 +20,7 @@ const Order = () => {
       ) : (
         <div className="shadow p-6 rounded-md">
           <div>
-            <h2 className="text-orange-500 font-bold text-3xl">
+            <h2 className="text-orange-500 font-bold text-xl sm:text-3xl">
               Orden {order.id}
             </h2>
           </div>

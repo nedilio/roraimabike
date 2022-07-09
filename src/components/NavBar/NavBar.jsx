@@ -46,9 +46,9 @@ function NavBar() {
           </button>
           <div className="navbar-collapse flex-1">
             <ul className="sm:flex sm:justify-between sm:pl-4 m-0">
-              <li className="p-2 relative text-center">
+              <li className="p-5 sm:p-2 relative text-center">
                 <NavLink
-                  className="capitalize text-orange-400 nav-link"
+                  className="capitalize text-orange-400 nav-link text-xl sm:text-base"
                   to="/"
                   onClick={closeMobileMenu}
                 >
@@ -56,9 +56,9 @@ function NavBar() {
                 </NavLink>
               </li>
               {menuArray.map((item, index) => (
-                <li className="p-2 relative text-center" key={item}>
+                <li className="p-5 sm:p-2 relative text-center" key={item}>
                   <NavLink
-                    className="nav-link capitalize text-orange-400"
+                    className="nav-link capitalize text-orange-400 text-xl sm:text-base"
                     to={`/category/${item}`}
                     onClick={closeMobileMenu}
                   >
@@ -66,7 +66,7 @@ function NavBar() {
                   </NavLink>
                 </li>
               ))}
-              <li className="p-2 relative flex justify-center">
+              <li className="p-5 sm:p-2 relative flex justify-center">
                 <CartWidget onClick={closeMobileMenu} />
               </li>
             </ul>

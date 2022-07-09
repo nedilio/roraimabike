@@ -12,26 +12,28 @@ function App() {
     <div className="font-sans bg-slate-100">
       <CartContextProvider>
         <BrowserRouter>
-          <header>
+          <header className="fixed w-full top-0 left-0 bg-slate-100 z-20">
             <NavBar />
           </header>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <ItemListContainer greeting="Bienvenidos a RoraimaBike" />
-              }
-            />
-            <Route
-              path="/category/:categoryId"
-              element={
-                <ItemListContainer greeting="Productos en Categoria: " />
-              }
-            />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/item/:id" element={<ItemDetailsContainer />} />
-            <Route path="/order/:id" element={<Order />} />
-          </Routes>
+          <div className="mt-20 md:mt-16">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <ItemListContainer greeting="Bienvenidos a RoraimaBike" />
+                }
+              />
+              <Route
+                path="/category/:categoryId"
+                element={
+                  <ItemListContainer greeting="Productos en Categoria: " />
+                }
+              />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/item/:id" element={<ItemDetailsContainer />} />
+              <Route path="/order/:id" element={<Order />} />
+            </Routes>
+          </div>
         </BrowserRouter>
       </CartContextProvider>
     </div>

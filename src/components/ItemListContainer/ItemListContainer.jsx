@@ -36,7 +36,7 @@ function ItemListContainer(props) {
   }, [categoryId]);
 
   return (
-    <section className="contacontainer mx-auto px-2 my-8">
+    <section className="container mx-auto px-2 my-8">
       <h1 className="text-center text-2xl my-4">
         {props.greeting}
         {categoryId && categoryId}

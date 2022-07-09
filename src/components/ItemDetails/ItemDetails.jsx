@@ -26,7 +26,7 @@ function ItemDetails({ item }) {
 
   return (
     <>
-      <div className="w-11/12 md:w-4/5 mx-auto shadow-md rounded mb-4">
+      <div className="w-11/12 md:w-4/5 mx-auto shadow-md rounded mb-4 relative">
         <div className="sm:flex p-6">
           <div className="flex-none w-80 h-80 sm:w-56 mb-10 relative z-10 before:absolute before:top-2 before:left-2 before:w-full before:h-80 sm:before:h-56 before:bg-orange-500">
             <img

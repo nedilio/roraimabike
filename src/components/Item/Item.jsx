@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
+import NoStock from "../NoStock/NoStock";
 
 function Item({ item }) {
   const url = `/item/${item.id}`;
   return (
     <div className="w-11/12 mx-auto mb-6 rounded sm:w-80 md:w-96 sm:justify-around">
-      <div className="text-center shadow-md">
+      <div className="text-center shadow-md overflow-hidden">
         <div className="p-3 relative">
-          <Link to={url}>
+          <Link to={url} className="flex justify-center bg-slate-100">
+            {item.stock === 0 && <NoStock />}
             <img
               src={item.pictureUrl}
-              className="w-full h-auto rounded transition ease-in-out delay-150 hover:scale-105"
+              className="w-6/12 md:w-full h-auto rounded transition ease-in-out delay-150 hover:scale-105"
               alt={item.title}
             />
           </Link>
@@ -21,9 +23,6 @@ function Item({ item }) {
               {item.title}
             </h1>
             <div className="relative text-lg text-white">${item.price}</div>
-            <div className="relative uppercase text-orange-500 ml-3">
-              {item.stock > 0 ? `En Stock: ${item.stock}` : "Sin Stock"}
-            </div>
           </div>
           <div className="text-md sm:text-sm leading-6 text-slate-500 py-4">
             <p className="mb-4">Categoría: {item.category}</p>
