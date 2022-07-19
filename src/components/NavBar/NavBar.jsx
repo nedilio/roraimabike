@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import LogoRoraima from "../../img/logo-color.png";
 import { products } from "../../data/products";
 import "./NavBar.scss";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 function NavBar() {
   let menuArray = [];
@@ -12,6 +14,7 @@ function NavBar() {
     }
     return true;
   });
+  const { cartCount } = useContext(CartContext);
 
   const toggleMobileMenu = () => {
     const menu = document.querySelector(".navbar-collapse");
@@ -32,7 +35,7 @@ function NavBar() {
   return (
     <div>
       <nav className="shadow">
-        <div className="container mx-auto flex py-4 sm:py-0 px-4 md:px-0 justify-between items-center">
+        <div className="container mx-auto flex py-4 lg:py-0 px-4 lg:px-0 justify-between items-center">
           <NavLink to="/">
             <img src={LogoRoraima} className="max-h-8" alt="" />
           </NavLink>
@@ -45,10 +48,10 @@ function NavBar() {
             <span className="line-3"></span>
           </button>
           <div className="navbar-collapse flex-1">
-            <ul className="sm:flex sm:justify-between sm:pl-4 m-0">
-              <li className="p-5 sm:p-2 relative text-center">
+            <ul className="md:flex md:justify-between md:pl-4 m-0">
+              <li className="px-5 py-2 mb-4 md:p-2 md:mb-0 relative text-center">
                 <NavLink
-                  className="capitalize text-orange-400 nav-link text-xl sm:text-base"
+                  className="capitalize text-orange-400 nav-link text-xl md:text-base"
                   to="/"
                   onClick={closeMobileMenu}
                 >
@@ -56,9 +59,12 @@ function NavBar() {
                 </NavLink>
               </li>
               {menuArray.map((item, index) => (
-                <li className="p-5 sm:p-2 relative text-center" key={item}>
+                <li
+                  className="px-5 py-2 mb-4 md:p-2 md:mb-0 relative text-center"
+                  key={item}
+                >
                   <NavLink
-                    className="nav-link capitalize text-orange-400 text-xl sm:text-base"
+                    className="nav-link capitalize text-orange-400 text-xl md:text-base"
                     to={`/category/${item}`}
                     onClick={closeMobileMenu}
                   >
@@ -66,9 +72,11 @@ function NavBar() {
                   </NavLink>
                 </li>
               ))}
-              <li className="p-5 sm:p-2 relative flex justify-center">
-                <CartWidget onClick={closeMobileMenu} />
-              </li>
+              {cartCount > 0 && (
+                <li className="px-5 py-2 mb-4 md:p-2 md:mb-0 relative flex justify-center">
+                  <CartWidget onClick={closeMobileMenu} />
+                </li>
+              )}
             </ul>
           </div>
         </div>

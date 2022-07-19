@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import useCurrency from "../../hooks/useCurrency";
 import Button from "../Button/Button";
 import ItemCount from "../ItemCount/ItemCount";
 
@@ -28,7 +29,7 @@ function ItemDetails({ item }) {
     <>
       <div className="w-11/12 md:w-4/5 mx-auto shadow-md rounded mb-4 relative">
         <div className="sm:flex p-6">
-          <div className="flex-none w-80 h-80 sm:w-56 mb-10 relative z-10 before:absolute before:top-2 before:left-2 before:w-full before:h-80 sm:before:h-56 before:bg-orange-500">
+          <div className="flex-none w-72 h-72 sm:w-56 mb-10 relative z-10 before:absolute before:top-2 before:left-2 before:w-full before:h-72 sm:before:h-56 before:bg-orange-500 mx-auto">
             <img
               src={item.pictureUrl}
               alt=""
@@ -41,7 +42,9 @@ function ItemDetails({ item }) {
               <h1 className="relative w-full flex-none mb-2 text-2xl font-semibold text-white">
                 {item.title}
               </h1>
-              <div className="relative text-lg text-white">${item.price}</div>
+              <div className="relative text-lg text-white">
+                {useCurrency(item.price)}
+              </div>
               <div className="relative uppercase text-orange-500 ml-3">
                 {item.stock > 0 ? `En Stock: ${item.stock}` : "Sin Stock"}
               </div>
@@ -49,9 +52,11 @@ function ItemDetails({ item }) {
             <div className="text-md sm:text-sm leading-6 text-slate-500">
               <p className="my-4">Categoría: {item.category}</p>
               <p>{item.description}</p>
-              <p className="text-slate-800 mt-4">
-                Tienes {quantity} de este producto en el carrito
-              </p>
+              {item.stock !== 0 && (
+                <p className="text-slate-800 mt-4">
+                  Tienes {quantity} de este producto en el carrito
+                </p>
+              )}
             </div>
 
             <div className="w-44 sm:w-1/2 lg:w-1/3 mb-4 mx-auto md:mx-0 text-sm text-center font-medium">

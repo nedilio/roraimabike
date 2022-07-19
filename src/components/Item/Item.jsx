@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import useCurrency from "../../hooks/useCurrency";
 import Button from "../Button/Button";
 import NoStock from "../NoStock/NoStock";
 
@@ -22,7 +23,9 @@ function Item({ item }) {
             <h1 className="relative w-full flex-none mb-2 text-2xl font-semibold text-white">
               {item.title}
             </h1>
-            <div className="relative text-lg text-white">${item.price}</div>
+            <div className="relative text-lg text-white">
+              {useCurrency(item.price)}
+            </div>
           </div>
           <div className="text-md sm:text-sm leading-6 text-slate-500 py-4">
             <p className="mb-4">Categoría: {item.category}</p>

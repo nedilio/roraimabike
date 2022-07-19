@@ -16,7 +16,6 @@ const firebaseConfig = {
   apiKey: "AIzaSyA3h2QzBMq-s1gxhePjJsiXmCLPAh3QRKs",
   authDomain: "roraimabike-a6ef3.firebaseapp.com",
   projectId: "roraimabike-a6ef3",
-  // projectId: process.env.PROJECT_ID,
   storageBucket: "roraimabike-a6ef3.appspot.com",
   messagingSenderId: "51852262733",
   appId: "1:51852262733:web:db13aaf7c9e10b77768b04",
@@ -30,7 +29,6 @@ export const testDB = () => {
   console.log(db);
 };
 
-// Funcion para traer todos los productos desde firestore
 export const getProductos = async () => {
   const productsCollection = collection(db, "products");
   const productsSnapshot = await getDocs(productsCollection);
@@ -40,7 +38,6 @@ export const getProductos = async () => {
   return products;
 };
 
-// Funcion para traer productos de una categoria desde firestore
 export const getProductosByCat = async (categoryId) => {
   const productsCollection = collection(db, "products");
   const catQuery = query(

@@ -34,7 +34,7 @@ const CartForm = ({ handleOnChange, handleBuyOrder, validateBuyerData }) => {
           </label>
           <input
             className="rounded border-orange-500 border p-2"
-            type="text"
+            type="number"
             name="phone"
             onChange={handleOnChange}
           />

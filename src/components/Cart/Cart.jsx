@@ -6,6 +6,7 @@ import Button from "../Button/Button";
 import CartForm from "./CartForm";
 import Loader from "../Loader/Loader";
 import CartItem from "./CartItem";
+import useCurrency from "../../hooks/useCurrency";
 
 const Cart = () => {
   const { cart, cartTotal, clear } = useContext(CartContext);
@@ -34,12 +35,16 @@ const Cart = () => {
 
   const validateBuyerData = () => {
     const { name, phone, email } = order.buyer;
-    if (name === "" || phone === "" || email === "") {
-      return true;
-    } else {
+    const regexName = /^[\w'\-,.][^0-9_!¡?÷?¿/+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
+    const regexEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    if (regexName.test(name) && phone !== "" && regexEmail.test(email)) {
       return false;
+    } else {
+      return true;
     }
   };
+
+  const total = useCurrency(cartTotal);
 
   return (
     <section className="container my-4 mx-auto px-4 relative">
@@ -70,7 +75,7 @@ const Cart = () => {
             </ul>
             <div className="mb-4 justify-end text-center">
               <p className="inline-block float-right font-bold text-xl mb-4">
-                Total: $ {cartTotal}
+                Total: {total}
               </p>
               <Button
                 onClick={clear}
