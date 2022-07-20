@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Trash } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import useCurrency from "../../hooks/useCurrency";
@@ -9,20 +10,27 @@ function ItemDetails({ item }) {
   const { addItem } = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
   const [isAdded, setIsAdded] = useState(false);
-  const { cart } = useContext(CartContext);
+  const { cart, removeItem } = useContext(CartContext);
 
   useEffect(() => {
     const producto = cart.find((producto) => producto.id === item.id);
     if (producto) {
       setQuantity(producto.quantity);
+    } else {
+      setQuantity(0);
     }
     // eslint-disable-next-line
-  }, []);
+  }, [cart]);
 
   const onAddToCart = (quantity) => {
     addItem(item, quantity);
     setQuantity(quantity);
     setIsAdded(true);
+  };
+
+  const handleRemove = (id) => {
+    removeItem(id);
+    setIsAdded(false);
   };
 
   return (
@@ -53,9 +61,20 @@ function ItemDetails({ item }) {
               <p className="my-4">Categoría: {item.category}</p>
               <p>{item.description}</p>
               {item.stock !== 0 && (
-                <p className="text-slate-800 mt-4">
-                  Tienes {quantity} de este producto en el carrito
-                </p>
+                <div className="flex mt-4 ">
+                  <p className="text-slate-800 flex mr-4 items-center">
+                    Tienes {quantity} de este producto en el carrito
+                  </p>
+                  {quantity > 0 && (
+                    <Button
+                      onClick={() => handleRemove(item.id)}
+                      color="bg-red-500 hover:bg-red-300"
+                      className="text-lg"
+                    >
+                      <Trash />
+                    </Button>
+                  )}
+                </div>
               )}
             </div>
 

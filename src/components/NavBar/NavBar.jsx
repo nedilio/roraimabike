@@ -47,8 +47,8 @@ function NavBar() {
             <span className="line-2"></span>
             <span className="line-3"></span>
           </button>
-          <div className="navbar-collapse flex-1">
-            <ul className="md:flex md:justify-between md:pl-4 m-0">
+          <div className="navbar-collapse flex-1 z-50">
+            <ul className="md:flex md:justify-around md:pl-4 m-0">
               <li className="px-5 py-2 mb-4 md:p-2 md:mb-0 relative text-center">
                 <NavLink
                   className="capitalize text-orange-400 nav-link text-xl md:text-base"

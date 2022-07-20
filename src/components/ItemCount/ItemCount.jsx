@@ -10,7 +10,7 @@ function ItemCount({ initial, stock, quantity, onAddToCart }) {
   }
 
   const plusCount = () => {
-    if (count < stock) {
+    if (count + quantity < stock) {
       setCount(count + 1);
       setError("");
     } else {
@@ -54,9 +54,7 @@ function ItemCount({ initial, stock, quantity, onAddToCart }) {
         </div>
       )}
       <div className="mt-5 text-center ">
-        <Button onClick={handleAddToCart}>
-          {quantity > 0 ? "Actualizar Carrito" : "Agregar al Carrito"}
-        </Button>
+        <Button onClick={handleAddToCart}>Agregar al Carrito</Button>
       </div>
     </div>
   );

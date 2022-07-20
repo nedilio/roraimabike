@@ -19,8 +19,8 @@ function CartContextProvider(props) {
           if (prod.id !== item.id) {
             return prod;
           } else {
-            return { ...prod, quantity };
-            // return { ...prod, quantity: prod.quantity + quantity };
+            // return { ...prod, quantity };
+            return { ...prod, quantity: prod.quantity + quantity };
           }
         })
       );
