@@ -1,10 +1,8 @@
 # RORAIMABIKE
 
-Es un e-commerce desarrolado en react para un taller de bicicletas para el curso de ReactJS de Coderhouse.
+## Es un e-commerce para un taller de bicicletas desarrolado en react durante el curso de ReactJS de Coderhouse.
 
-### Deploy en [RoraimaBike](https://chimerical-belekoy-ae2a64.netlify.app/)
-
-![](./roraimabike.GIF)
+[![](./roraimabike.GIF)](https://chimerical-belekoy-ae2a64.netlify.app/)
 
 ## RECURSOS UTILIZADOS
 1. Se inició el proyecto utilizando [Create React App](https://github.com/facebook/create-react-app).
@@ -20,13 +18,15 @@ Es un e-commerce desarrolado en react para un taller de bicicletas para el curso
 - En el home se muestra un componente que incluye los cards de los productos cargados. Este mismo componente muestra los productos filtrados por categorias que se seleccionan desde el menu.
 - Al hacer click en ver mas de un producto se carga la vista de los detalles de producto.
 - Se puede agregar productos al carrito desde la vista detalle y el maximo es el determinado por el stock disponible del producto.
-- En el carrito se puede volver al producto para actualizar la cantidad (no se suman de nuevo para poder decidir si quiero menos productos de los que estaban agregados).
+- Desde el carrito se puede volver a uno de los productos agregados para poder modificar la cantidad.
 - Al finalizar la compra se redirige a un componente donde se muestra el resumen de la orden y su id tambien se descuenta los productos comprados del stock.
 
 ## Scripts
 
-En el directorio, se puede usar:
+En el directorio para desarrollo se puede usar:
 
 ### `yarn start`
 
 Inicia la app en [http://localhost:3000](http://localhost:3000)
+
+#### Si quieres ver la app funcionando [Visita este Link](https://chimerical-belekoy-ae2a64.netlify.app/)

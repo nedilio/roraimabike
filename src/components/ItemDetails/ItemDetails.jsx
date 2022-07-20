@@ -63,7 +63,9 @@ function ItemDetails({ item }) {
               {item.stock !== 0 && (
                 <div className="flex mt-4 ">
                   <p className="text-slate-800 flex mr-4 items-center">
-                    Tienes {quantity} de este producto en el carrito
+                    {quantity === 0
+                      ? "No hay items de este producto en el carrito"
+                      : `Tienes ${quantity} de este producto en el carrito`}
                   </p>
                   {quantity > 0 && (
                     <Button
