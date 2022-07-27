@@ -193,6 +193,10 @@ export const updateStock = (cart) => {
     await updateDoc(prodRef, { stock: stock - quantity });
   });
 };
+export const updateProduct = (id, product) => {
+  const prodRef = doc(db, "products", id);
+  updateDoc(prodRef, product);
+};
 
 export const getOrder = async (id) => {
   const orderRef = doc(db, "orders", id);

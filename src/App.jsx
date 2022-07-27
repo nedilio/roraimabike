@@ -6,6 +6,8 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import NavBar from "./components/NavBar/NavBar";
 import Order from "./components/Order/Order";
 import "./App.scss";
+import AdminProducts from "./components/AdminProducts/AdminProducts";
+import Producto from "./components/Producto/Producto";
 
 function App() {
   return (
@@ -32,6 +34,11 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/item/:id" element={<ItemDetailsContainer />} />
               <Route path="/order/:id" element={<Order />} />
+              <Route path="/admin-products" element={<AdminProducts />} />
+              <Route
+                path="/admin-products/producto/:id"
+                element={<Producto />}
+              />
             </Routes>
           </div>
         </BrowserRouter>
